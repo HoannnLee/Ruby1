@@ -1,7 +1,12 @@
-<h1 style="color:red, font-size:24px"><%= @product.name %></h1>
-<p><%= @product.title %></p>
+<h1 class="product-name"><%= @product.name %></h1>
+<div class="product-details">
+  <p class="product-name"><%= @product.name %></p>
+  <p class="product-price"><%= @product.price %></p>
+  <p class="product-description"><%= @product.des %></p>
+</div>
 
 
-<%= link_to "Back", products_path %>
-<%= link_to "Edit", edit_product_path(@product) %>
-<%= button_to "Delete", @product, method: :delete, data: { turbo_confirm: "Are you sure?" } %>
+
+<%= link_to "Back", products_path,  class: "btn" %>
+<%= link_to "Edit", edit_product_path(@product) ,  class: "btn" %>
+<%= button_to "Delete", @product, method: :delete,  data: { turbo_confirm: "Are you sure?" }  , class:"btn"%>

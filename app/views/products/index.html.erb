@@ -1,14 +1,16 @@
-<h1>Products</h1>
+<h1 class="page-title">Products</h1>
 
-<a href="products/new" style="color:red ; font-size:24px ; font-style:italic ; font-style:bold"> Thêm </a>
+  <a class="btn" href="products/new">Thêm</a>
 
-<div id="products">
-  <% @products.each do |product| %>
-    <ul>
-        <li style="list-style:none">
-            <a href="/products/<%= product.id %>" style="color:red ; font-size:24px ; font-style:italic ; font-style:bold"> <%= product.name %> </a>
-            <p style="font-size:14px ; margin-left: 16px">  <%= product.title %></P>
-        </li>
+  <div id="products">
+    <ul class ="block">
+      <% @products.each do |product| %>
+          <li class="product-item">
+            <a class="product-link" href="/products/<%= product.id %>">
+              <%= product.name %>
+            </a>
+            <p class="product-price"><%= product.price %></p>
+          </li>
+      <% end %>
     </ul>
-  <% end %>
-</div>
+    </div>

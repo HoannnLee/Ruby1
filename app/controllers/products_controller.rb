@@ -18,7 +18,8 @@ class ProductsController < ApplicationController
     @product = Product.new
   end
 
-  
+  # Thêm
+
   def create
     @product = Product.new(product_params)
     if @product.save
@@ -27,6 +28,8 @@ class ProductsController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
+
+  # sửa
 
   def edit
     @product = Product.find(params[:id])
@@ -41,6 +44,8 @@ class ProductsController < ApplicationController
     end
   end
 
+  # xÓA
+
   def destroy
     @product.destroy
     redirect_to products_path
@@ -53,6 +58,7 @@ class ProductsController < ApplicationController
     
     def product_params
       params.expect(product: [ :name ])
-      params.expect(product: [ :title ])
+      params.expect(product: [ :des ])
+      params.expect(product: [ :price ])
     end
 end
