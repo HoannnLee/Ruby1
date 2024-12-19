@@ -1,0 +1,12 @@
+<%= tag.div(flash[:alert], class: "alert alert-danger") if flash[:alert] %>
+<%= tag.div(flash[:notice], class: "alert alert-success") if flash[:notice] %>
+
+<%= form_with url: session_path, class: "login-form" do |form| %>
+  <%= form.email_field :email_address, required: true, autofocus: true, autocomplete: "username", placeholder: "Nhập địa chỉ email", value: params[:email_address], class: "form-input" %><br>
+  <%= form.password_field :password, required: true, autocomplete: "current-password", placeholder: "nhập mật khẩu", maxlength: 72, class: "form-input" %><br>
+  <%= form.submit "Đăng nhập", class: "submit-btn" %>
+<% end %>
+<br>
+
+<%= link_to "Quên mật khẩu?", new_password_path, class: "forgot-password-link" %>
+
