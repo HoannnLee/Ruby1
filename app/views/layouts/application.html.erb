@@ -16,19 +16,19 @@
     <link rel="icon" href="/icon.png" type="image/png">
     <link rel="icon" href="/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/icon.png">
+  
 
     <%# Includes all stylesheet files in app/assets/stylesheets %>
     <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
-    <link rel="stylesheet" type="text/css" href="/styles.css">
 
   </head>
 
   <body>
+ 
     <nav class="navbar">
       <%= link_to "Home", root_path, class: "nav-link" %>
       <%= button_to "Log out", session_path, method: :delete, class: "logout-btn" if authenticated? %>
     </nav>
-
     <%= yield %>
   </body>
 </html>

@@ -1,6 +1,6 @@
 <h1 class="page-title">Products</h1>
 
-  <a class="btn" href="products/new">Thêm</a>
+  <%= link_to "Thêm sản phẩm" ,new_product_path if authenticated? %>
 
   <div id="products">
     <ul class ="block">

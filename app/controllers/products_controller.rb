@@ -5,6 +5,8 @@
 
 class ProductsController < ApplicationController
 
+  allow_unauthenticated_access only: %i[ index show ]
+
   before_action :set_product, only: %i[ show edit update destroy ]
 
   def index
@@ -18,8 +20,6 @@ class ProductsController < ApplicationController
     @product = Product.new
   end
 
-  # Thêm
-
   def create
     @product = Product.new(product_params)
     if @product.save
@@ -29,22 +29,16 @@ class ProductsController < ApplicationController
     end
   end
 
-  # sửa
-
   def edit
-    @product = Product.find(params[:id])
   end
 
   def update
-    @product = Product.find(params[:id])
     if @product.update(product_params)
       redirect_to @product
     else
       render :edit, status: :unprocessable_entity
     end
   end
-
-  # xÓA
 
   def destroy
     @product.destroy
@@ -55,10 +49,9 @@ class ProductsController < ApplicationController
     def set_product
       @product = Product.find(params[:id])
     end
-    
+
     def product_params
-      params.expect(product: [ :name ])
-      params.expect(product: [ :des ])
-      params.expect(product: [ :price ])
+      params.require(:product).permit(:name, :des, :price)
     end
+
 end
