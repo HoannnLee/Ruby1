@@ -2,10 +2,6 @@
 
 one:
   name: MyString
-  des: MyString
-  price: 1.5
 
 two:
   name: MyString
-  des: MyString
-  price: 1.5
