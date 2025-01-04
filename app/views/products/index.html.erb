@@ -1,6 +1,6 @@
 <h1 class="page-title">Products</h1>
 
-  <%= link_to "Thêm sản phẩm" ,new_product_path if authenticated? %>
+  <%= link_to "Thêm sản phẩm" , new_product_path , class: "btn" if authenticated? %>
 
   <div id="products">
     <ul class ="block">
@@ -9,8 +9,9 @@
             <a class="product-link" href="/products/<%= product.id %>">
               <%= product.name %>
             </a>
+            
             <p class="product-price"><%= product.price %></p>
           </li>
       <% end %>
     </ul>
-    </div>
+  </div>

@@ -20,6 +20,7 @@
 
     <%# Includes all stylesheet files in app/assets/stylesheets %>
     <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
 
   </head>
 
@@ -29,6 +30,9 @@
       <%= link_to "Home", root_path, class: "nav-link" %>
       <%= button_to "Log out", session_path, method: :delete, class: "logout-btn" if authenticated? %>
     </nav>
-    <%= yield %>
+    
+     <main class="main">
+      <%= yield %>
+     </main>
   </body>
 </html>
