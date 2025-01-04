@@ -4,7 +4,6 @@ source "https://rubygems.org"
 gem "rails", "~> 8.0.0", ">= 8.0.0.1"
 # The modern asset pipeline for Rails [https://github.com/rails/propshaft]
 gem "propshaft"
-gem "pg", "~> 1.1"
 # Use sqlite3 as the database for Active Record
 # gem "sqlite3", ">= 2.1"
 # Use the Puma web server [https://github.com/puma/puma]
@@ -62,3 +61,6 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+gem "pg", "~> 1.1"
+
